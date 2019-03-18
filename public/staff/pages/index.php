@@ -2,7 +2,7 @@
 
 <?php
   $pages = [
-    ['id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'Globe Bank'],
+    ['id' => '1', 'position' => '1', 'visible' => '0', 'menu_name' => 'Globe Bank'],
     ['id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'History'],
     ['id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Leadership'],
     ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Contact Us'],
@@ -17,7 +17,7 @@
     <h1>Pages</h1>
 
     <div class="actions">
-      <a class="action" href="">Create New Page</a>
+      <a class="action" href="<?php echo url_for('/staff/pages/new.php'); ?>">Create New Page</a>
     </div>
 
   	<table class="list">
@@ -38,7 +38,7 @@
           <td><?php echo $page['visible'] == 1 ? 'true' : 'false'; ?></td>
     	    <td><?php echo h($page['menu_name']); ?></td>
           <td><a class="action" href="<?php echo url_for('/staff/pages/show.php?id=' . h(u($page['id']))); ?>">View</a></td>
-          <td><a class="action" href="">Edit</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($page['id']))); ?>">Edit</a></td>
           <td><a class="action" href="">Delete</a></td>
     	  </tr>
       <?php } ?>
